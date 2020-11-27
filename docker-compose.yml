@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ci:
-    image: daemonit/daemonit-ci:master
+    image: daemonit/daemonit-ci:latest
     build:
       context: '.'
       dockerfile: 'docker/Dockerfile'

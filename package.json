@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "axios": "^0.21.0",
+    "axios-auth-refresh": "^3.0.0"
+  },
+  "name": "daemonit-ci",
+  "version": "0.0.1",
+  "description": "CI helper with daemonit.com",
+  "main": "index.js",
+  "repository": "git@github.com:Daemonitsaas/daemonit-ci.git",
+  "author": "Emilien Mantel",
+  "license": "MIT"
+}

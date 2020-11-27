@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  ci:
+    image: daemonit/daemonit-ci:master
+    build:
+      context: '.'
+      dockerfile: 'docker/Dockerfile'
+    tty: true
+    entrypoint: /bin/sh
+    working_dir: /app
+    volumes:
+      - ./:/app
+    stop_grace_period: 1s

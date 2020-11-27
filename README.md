@@ -1,6 +1,9 @@
 daemonit-ci
 ===========
 
+![Daemonit Logo](.media/daemonit_logo_full_600x151.png?raw=true)
+
+
 Docker image: [daemonit/daemonit-ci](https://hub.docker.com/repository/docker/daemonit/daemonit-ci)
 
 

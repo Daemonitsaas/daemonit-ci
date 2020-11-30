@@ -15,7 +15,10 @@ COPY yarn.lock ./
 RUN yarn install --no-dev && \
 	rm -rf /tmp/*
 
-ENV DAEMONIT_ENGINE_ID='6'
+ENV DAEMONIT_URL=''
+ENV DAEMONIT_ENGINE_ID='15'
+ENV DAEMONIT_API_USER=''
+ENV DAEMONIT_API_PASS=''
 
 WORKDIR /usr/src/app
 CMD ["node", "index.js"]

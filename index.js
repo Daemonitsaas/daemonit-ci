@@ -1,7 +1,6 @@
 'use strict';
 
 const POLL_TIMEOUT = 300000; // 5 min
-const DEFAULT_ENGINE_ID = 6;
 const axios = require('axios');
 const createAuthRefreshInterceptor = require('axios-auth-refresh').default;
 axios.defaults.baseURL = process.env.DAEMONIT_API_BASE_URL || 'https://app.daemonit.com/api';
@@ -138,7 +137,7 @@ function debug_input() {
 	console.log('| Check env vars | ')
 	console.log("+----------------+");
 	envs.map(x => {
-		if (x.mandatory && process.env[x.key] === undefined) {
+		if (x.mandatory && (process.env[x.key] === undefined || process.env[x.key] === '')) {
 			throw new Error(`${x.key} is mandatory`);
 		}
 
@@ -170,8 +169,7 @@ function debug_input() {
 
 	try {
 		createAuthRefreshInterceptor(axios, refreshAuthLogic);
-		const engine_id = process.env.DAEMONIT_ENGINE_ID || DEFAULT_ENGINE_ID;
-		const report_uuid = await createReport(process.env.DAEMONIT_URL, engine_id);
+		const report_uuid = await createReport(process.env.DAEMONIT_URL, process.env.DAEMONIT_ENGINE_ID);
 		message_ok(`New report created: ${report_uuid}`);
 
 		const stats = await poll_stats(report_uuid);

@@ -40,4 +40,4 @@ Website URL target
 #### DAEMONIT_ENGINE_ID
 
 Engine used to perform the audit. Please check [engine page](http://app.daemonit.com/infos/engines) to search the best engine for your usage.
-Default is `6` (France).
+Default is `15` (Paris, France).

@@ -6,3 +6,6 @@ stop:
 
 down:
 	docker-compose down -v
+
+shell:
+	docker-compose exec ci /bin/sh
